@@ -40,6 +40,10 @@ if [[ -z $(snapctl get edge-core.refresh-timeout) ]]; then
     snapctl set edge-core.refresh-timeout=300
 fi
 
+
 if [[ -z $(snapctl get kubelet.offline-mode) ]]; then
     snapctl set kubelet.offline-mode=true
+
+if [[ -z $(snapctl get edge-core.proxy) ]]; then
+    snapctl set edge-core.proxy=""
 fi
